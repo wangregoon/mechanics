@@ -1,0 +1,28 @@
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+
+\newtheorem{problem}{Problem}[chapter] 
+
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{prop}{Propsition}[chapter] 
+\newtheorem{lem}{Lemma}[chapter] 
+\newtheorem{cor}{Corollary}[chapter] 
+%\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{exer}{Exercise}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter] 
+\newtheorem{example}{Example}[chapter] 
+
+\newtheorem{note}{Note}[chapter] 
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter] 
+
+\newenvironment{solution}
+               {\let\oldqedsymbol=\qedsymbol
+                \renewcommand{\qedsymbol}{$\blacktriangleleft$}
+                \begin{proof}[\bfseries\upshape Solution]}
+               {\end{proof}
+                \renewcommand{\qedsymbol}{\oldqedsymbol}}
