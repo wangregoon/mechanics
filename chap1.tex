@@ -243,8 +243,8 @@ B=\emptyset,\overline{d}(A,B)=\infty, \overline{d}(\emptyset,\emptyset)=0$. We c
 Let S be a metric space and d the Hausdorff metric on $2^S$. Then $f:S\rightarrow 2^S$ is continuous at $u_0\in S$ iff for all
 $\varepsilon>0$ there is a $\delta>0$ s.t. $d(u,u_0)<\delta$ implies:
 \begin{enumerate}
-\item[(i)] for all $a\in f(u)$, there is a $b\in f(u_0)$ s.t. $d(a,b)<\varepsilon$; that is $$f(u)\subset \cup_{b\in f(u_0)}D_
-\varepsilon(b)$$.
+\item[(i)] for all $a\in f(u)$, there is a $b\in f(u_0)$ s.t. $d(a,b)<\varepsilon$; 
+that is $$f(u)\subset \underset{b\in f(u_0)}{\cup}D_\varepsilon(b)$$.
 \item[(ii)] for all $b\in f(u_0)$, there is an $a\in f(u)$ s.t. $d(b,a)<\varepsilon$.
 \end{enumerate}
 \end{prop}
@@ -382,6 +382,20 @@ Let E be the set of all $C^1$ functions $\map{f}{[0,1]}{\mathbb{R}}$ with the no
 [0,1]}|f(x)|+ sup_{x\in [0,1]}|f'(x)|$. Prove that E is a Banach space.
 \end{exer}
 \section{Local Differential Calculus}
+\begin{definition}
+Let E,F be two vector spaces with maps $\map{f,g}{U\subset E}{F}$. We say f and g are \tb{tangent} at $u_0\in U$ iff
+$$ \lim_{u\rightarrow u_0}\frac{\norm{f(u)-g(u)}}{\norm{u-u_0}}=0$$
+\end{definition}
+\begin{thm}
+For $\map{f}{U\subset E}{F}$ there is at most one $L\in L(E,F)$ so that the map $\map{g_L}{U\subset E}{F}$ given by
+$g_L(u)=f(u_0)+L(u-u_0)$ is tangent to f at $u_0$.
+\end{thm}
+\begin{definition}
+If there is such an L we say f is \tb{differentiable} at $u_0$, and define the \tb{derivative} of f at $u_0$ to be
+$Df(u_0)=L$. If f is differentiable at each $u\in U$, the map $\map{\mathrm{D}f}{U}{L(E,F)};u\mapsto \mathrm{D}f(u)$ 
+is the \tb{derivative} of f. Moreover, if $\mathrm{D}f$ is a continuous map we say f is of class $C^1$.
+\end{definition}
+
 \section*{Exercises}
 \section{Manifolds and Mappings}
 \section*{Exercises}
