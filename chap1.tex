@@ -321,7 +321,66 @@ not locally compact. [Hint: Consier $\mathbb{R}\cup\{\pm\infty\}$].
 Show that the continuous image of a connected space is connected.
 \end{exer}
 \section{Finite-Dimensional Banach Sapce}
+\begin{definition}
+A \tb{norm} on a vector space E is a mapping $\parallel\bullet\parallel:E\rightarrow \mathbb{R}$ s.t.
+\begin{enumerate}
+\item[(N1)] $\parallel\bullet\parallel\geq 0, \forall e\in E$ and $\parallel e\parallel=0$ iff $e=0$.
+\item[(N2)] $\parallel\lambda e\parallel=|\lambda|\parallel e\parallel, \forall e\in E, \lambda\in\mathbb{R}$.
+\item[(N3)] $\parallel e_1+e_2\parallel\leq\parallel e_1\parallel+\parallel e_2\parallel, \forall e_1,e_2\in E$. 
+\end{enumerate}
+\end{definition}
+A normed space whose induced metric is complete is a \tb{Banach space}.
+\begin{definition}
+Two norms on a vector space E are \tb{equivalent} iff they induce the same topology on E.
+\end{definition}
+\begin{thm}
+Let E be a finite-dimensional real vector space. Then
+\begin{enumerate}
+\item[(i)] there is a norm on E;
+\item[(ii)] all norms on E are equivalent;
+\item[(iii)] all norms on E are complete.
+\end{enumerate}
+\end{thm}
+\begin{thm}
+For finite-dimensional real vector spaces, linear and multilinear maps are continuous.
+\end{thm}
+\begin{cor}
+Addition and scalar multiplication in a vector space are continuous maps from $E\times E\rightarrow E, \mathbb{R}\times E
+\rightarrow E$.
+\end{cor}
+\begin{definition}
+Given E,F we let $L(E,F)$ denote the set of all linear maps from E into F together with the natural structure of finite
+dimensional real vector space. Similarly, $L^k(E,F)$ denote the space of multilinear maps from $E\times\cdots\times E$ into
+F, $L_s^k(E,F)$, the subspace of symmetric elements of $L^k(E,F)$ [that is, if $\pi$ is any permutation of $\{1,2\cdots,k\}$,
+we have $f(e_1,\cdots,e_2)=f(e_{\pi(1)},\cdots,e_{\pi(k)})$] and $L_a^k(E,F)$ the subspace of skew symmetric [That is 
+if $\pi$ is any permutation of $\{1,2\cdots,k\}$,we have $f(e_1,\cdots,e_2)=(sgn \pi)f(e_{\pi(1)},\cdots,e_{\pi(k)})$, 
+wher $sgn \pi = \pm 1$ according as $\pi$ is an even or odd permutation].
+\end{definition}
+\begin{thm}
+There is a natural isomorphism $L(E,L^k(E,F))\approx L^{k+1}(E,F)$.
+\end{thm}
 \section*{Exercises}
+\begin{exer}
+Let $f\in L(E,F)$ so that f is continuous.
+\begin{enumerate}
+\item[(a)] Show that there is a constant K s.t. $\parallel f(e)\parallel\leq K\parallel e\parallel$ for all $e\in E$.
+Define $\parallel f\parallel$ as the greatest lower bound of such K.
+\item[(b)] Show that this is a norm on $L(E,F)$.
+\item[(c)] Prove that $\parallel f\circ g\parallel\leq \parallel f\parallel \cdot \parallel g\parallel$.
+\end{enumerate}
+\end{exer}
+\begin{exer}
+Suppose $f\in L(E,F)$ and $dim(E)=dim(F)$. Then f is an isomorphism iff it is a monomorphism (one-to-one) and iff it is
+surjective (onto).
+\end{exer}
+\begin{exer}
+Show that two norms $\parallel\bullet\parallel_1,\parallel\bullet\parallel_2$ are equivalent iff there is a constant M
+s.t. $M^{-1}\parallel e\parallel_1\leq \parallel e\parallel_2\leq M \parallel e\parallel_1$.
+\end{exer}
+\begin{exer}
+Let E be the set of all $C^1$ functions $\map{f}{[0,1]}{\mathbb{R}}$ with the norm $\parallel f\parallel=sup_{x\in
+[0,1]}|f(x)|+ sup_{x\in [0,1]}|f'(x)|$. Prove that E is a Banach space.
+\end{exer}
 \section{Local Differential Calculus}
 \section*{Exercises}
 \section{Manifolds and Mappings}
