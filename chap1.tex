@@ -145,7 +145,181 @@ Let $U\subset S$ be homeomorphic to $\varphi(U)\subset T$. There is a neighborho
 $\overline{V}$ is compact. Then $\varphi^{-1}(\overline{V})$ is compact, and hence closed in S. $\varphi^{-1}(\overline{V})\subset 
 \overline{\varphi^{-1}(V)}$. Thus $\varphi^{-1}(V)$ has compact closure.
 \end{proof}
+\begin{definition}
+A covering $\{U_\alpha\}$ of S is called a \tb{refinement} of a covering $\{V_i\}$ iff $\forall U_\alpha$ there is a $V_i$ s.t. $U_\alpha\subset
+V_i$. A covering $\{U_\alpha\}$ of S is called \tb{locally finite} iff each point $u\in S$ has a neighborhood U such that U intersects only a finite
+number of $U_\alpha$. A space is called \tb{paracompact} iff every open covering of S has a locally finite refinement of open sets, and S is
+Hausdorff.
+\end{definition}
+\begin{thm}
+Second countable, locally compact Hausdorff spaces are paracompact.
+\end{thm}
+\begin{proof}
+S is the countable union of open sets $U_n$ s.t. $\overline{U_n}$ is compact and $\overline{U_n}\subset U_{n+1}$. If $W_\alpha$ is a covering
+of S by open sets, and $K_n=\overline{U_n}-U_{n-1}$ then we can cover $K_n$ by a finit number of open sets each of which is contained in some
+$W_\alpha\cap U_{n+1}$, and is disjoint from $\overline{U_{n-2}}$. The union of such collections yiels the desired refinement of $\{W_\alpha\}$.
+\end{proof}
+\begin{thm}
+Every paracompact space is normal.
+\end{thm}
+\begin{proof}
+We first show that if A is closed and $u\in A^c$, there are disjoint neighborhoods of u and A. For each $v\in A$ let $U_u, V_v$ be disjoint
+neighborhood of u and v. Let $W_\alpha$ be a locally fninit refinement of the covering $V_v, A^c$ and $V=\cup W_\alpha$, the union over those
+$\alpha$ so $W_\alpha\cap A\neq \emptyset$. A neighborhood $U_0$ of u meets a finite number of $W_\alpha$. Let U denote the intersection of
+$U_0$ and the corresponding $U_u$. Then V and U are the required neighborhoods.
+\end{proof}
+\begin{thm}
+If S is a Hausdorff space, the following are equivalent:
+\begin{enumerate}
+\item[(i)] S is normal;
+\item[(ii)] For any two closed nonempty disjoint set A, B ther is a continuous function $f:S\rightarrow [0,1]$ s.t. $f(A)=0,f(B)=1$.(Urysohn's Lemma)
+\item[(iii)] For any closed set $A\subset S$ and continuous function $f:A\rightarrow [a,b]$, there is a continuous extension $\tilde{f}:S
+\rightarrow [a,b]$ of f (Tietze extension theorem)
+\end{enumerate}
+\end{thm}
+\begin{definition}
+The \tb{support} of $f:s\rightarrow \mathbb{R}$ is $supp(f)=\overline{\lbrace x\in S\mid f(x)\neq 0\rbrace}$. A \tb{partition of unity} on S
+is a familiy of continuous mappings $\lbrace \varphi_i:S\rightarrow [0,1]\rbrace$ s.t.
+\begin{enumerate}
+\item[(i)] $\lbrace supp(\varphi_i)\rbrace$ is locally finite.
+\item[(ii)] $\sum_i\varphi_i(x)=1$ for all x.
+\end{enumerate}
+We say that a pratition of unity $\{\varphi_i\}$ is \tb{subordinate} to a covering $\{A_\alpha\}$ of S if $supp(\varphi_i)$ is a refrinement
+of $\{A_\alpha\}$.
+\end{definition}
+\begin{thm}
+Let S be paracompact and $\{U_i\}$ be any open covering of S. Then ther is a partition of unity $\{\varphi_i\}$ subordinate to $\{U_i\}$.
+\end{thm}
+\begin{definition}
+A topological space S is \tb{connected} if $\emptyset$ and S are the only subsets of S that are both open and closed. A subset of S is connected
+iff it is connected in the relative topology. A \tb{component} A of S is a nonempty connected subsect of S s.t. the only connected subset of S 
+containing A is A; S is called \tb{locally connected} iff each point x has an open neighborhood containing a connected neighborhood of x.
+\end{definition}
+\begin{prop}
+A space S is not connected iff either of the following holds.
+\begin{enumerate}
+\item[(i)] There is a nonempty proper subset of S that is both open and closed.
+\item[(ii)] S is the disjoint union of two nonempty open sets.
+\item[(iii)] S is the disjoint union of two nonempty closed sets.
+\end{enumerate}
+\end{prop}
+\begin{prop}
+Let S be a connected space and $f:S\rightarrow \mathbb{R}$ be continuous. Then f assumes every value between any two values $f(u),f(v)$.
+\end{prop}
+\begin{proof}
+Suppose $f(u)<a<f(v)$ and f doses not assume the value a. Then $U=\lbrace u_0\mid f(u_0)<a\rbrace$ is both open and closed.
+\end{proof}
+\begin{prop}
+Let S be a topological space and $B\subset S$ be connected.
+\begin{enumerate}
+\item[(i)] if $B\subset A \subset \overline{B}$, then A is connected;
+\item[(ii)] if $B_\alpha$ are connected and $B_\alpha\cap B\neq \emptyset$, then $B\cup\left(U_\alpha B_\alpha\right)$ is connected.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+If A is not connected, A is the disjoint union of $U_1\cap A$ and $U_2\cap A$ where $U_1,U_2$ are open in S. Then $U_1\cap B\neq \emptyset,
+U_2\cap B\neq\emptyset$, so B is not connected.
+\end{proof}
+\begin{definition}
+An \tb{arc} $\varphi$ in S is a continuous mapping $\varphi:I=[0,1]\rightarrow S$. If $\varphi(0)=u,\varphi(1)=v$, we say $\varphi$ 
+joins u and v; S is called \tb{arcwise connected} iff every two points in S can be joined by an arc in S. A space is called \tb{locally
+arcwise connected} iff each point has an arcwise connected neighborhood.
+\end{definition}
+\begin{prop}
+Every arcwise connected space is connected. If a space is connected and locally arcwise connected, it is arcwise connected.
+\end{prop}
+\begin{proof}
+If S is arcwise connected and not connected, write $S=U_1\cup U_2$ where $U_1,U_2$ are nonempty, disjoint and open. Let $u_1\in U_1,
+u_2\in U_2$ and let $\varphi$ be an arc joining $u_1,u_2$. Now $\varphi(I)$ is connected, and since $\varphi(I)\cap U_i\neq \emptyset$,
+$\varphi\cap U_1 \cap U_2\neq\emptyset$. Hence $U_1\cap U_2\neq\emptyset$, a contradiction. Let $u\in S$and U denote all points that
+can be joined to u by an arc. An easy argument shows U and $U^c$ are open and so $U=S$.
+\end{proof}
+\begin{definition}
+Let S be a metric space with metric d, and $2^S$ denote the set of all subsets of S. Define $\tilde{d}(A,B)=sup{d(a,B)|a\in A}$. As
+this is not symmetric, we further define $\overline{d}(A,B)=sup\lbrace\tilde{d}(A,B),\tilde{d}(B,A)\rbrace$. If $A\neq\emptyset,
+B=\emptyset,\overline{d}(A,B)=\infty, \overline{d}(\emptyset,\emptyset)=0$. We call it the \tb{Hausdorff metric}.
+\end{definition}
+\begin{prop}
+Let S be a metric space and d the Hausdorff metric on $2^S$. Then $f:S\rightarrow 2^S$ is continuous at $u_0\in S$ iff for all
+$\varepsilon>0$ there is a $\delta>0$ s.t. $d(u,u_0)<\delta$ implies:
+\begin{enumerate}
+\item[(i)] for all $a\in f(u)$, there is a $b\in f(u_0)$ s.t. $d(a,b)<\varepsilon$; that is $$f(u)\subset \cup_{b\in f(u_0)}D_
+\varepsilon(b)$$.
+\item[(ii)] for all $b\in f(u_0)$, there is an $a\in f(u)$ s.t. $d(b,a)<\varepsilon$.
+\end{enumerate}
+\end{prop}
+\begin{definition}
+Let S be a set. An \tb{equivalence relation} $\sim$ on S is a binary relation s.t. for all $u,v,w\in S$
+\begin{enumerate}
+\item[(i)] $u\sim u$;
+\item[(ii)] $u\sim v$ iff $v\sim u$;
+\item[(iii)] $u\sim v, v\sim w \Rightarrow u\sim w$.
+\end{enumerate}
+The \tb{equivalence class} containing u, denoted $[u]$ is defined by $[u]=\lbrace v\in S\mid u\sim v\rbrace$. The set of equivalence
+classes is denote $S/\sim$, and the mapping $\pi:S\rightarrow S/\sim$; $u\longmapsto [u]$ is called the \tb{canonical projection}.
+\end{definition}
+\begin{definition}
+$\lbrace U\subset S/\sim\mid \pi^{-1}(U) \text{is open in} S\rbrace$ is called the \tb{quotient topology}.
+\end{definition}
+\begin{example}
+Consider $\R{2}$ and the relation $\sim$ defined by $(a_1,a_2)\sim (b_1,b_2)$ iff $a_1-b_1,a_2-b_2\in \Z$. Then $T^2=\R{2}/\sim$
+is called the 2-\tb{torus}. In addition to the quotient topology, it inherits a group structure in the usual way: $[(a_1,a_2)]+
+[(b_1,b_2)]=[(a_1,a_2)+(b_1,b_2)]$.
+\end{example}
+\begin{example}
+The Klein bottle is obtained by reversing one of the orientations. Notice that $K^2$ is not "orientable" and does not inherit a 
+group structure from $\R{2}$.
+\end{example}
+\begin{definition}
+Let Z be a topological space and $c:[0,1]\rightarrow Z$ a continuous map s.t. $c(0)=c(1)=p\in Z$. We call c a \tb{loop} in Z
+based at p. The loop c is called \tb{contractible} if there is a continuous map $H:[0,1]\times [0,1]\rightarrow Z$ s.t. $H(t,0)=
+c(t),H(t,1)=p, \forall t\in [0,1]$.
+\end{definition}
+\begin{definition}
+A space Z is called \tb{simply connected} iff every loop in Z is contractible.
+\end{definition}
+\begin{definition}
+Let X be a topological space and $A\subset X$. Then A is called $residual$ iff A is the intersection of a countable family of
+open dense subsets of X. A space X is called a \tb{Baire space} iff every residual set is dense.
+\end{definition}
+\begin{lem}
+Let X be a locally Baire space; that is, each point $x\in X$ has a neighborhood U s.t. $\overline{U}$ is a Baire space. Then X 
+is a Baire space.
+\end{lem}
+\begin{proof}
+Let $A\subset X$ be residual; $A=\cap_1^\infty O_n$ where $\overline{O_n}=X$. Then $A\cap \overline{U}=\cap_1^\infty (O_n\cap
+\overline{U})$ Now $O_n\cap \overline{U}$ is dense in $\overline{U}$ for if $u\in \overline{U}, u\in O$ then $O\cap U\neq\emptyset,
+O\cap U \cap O_n\neq\emptyset$. Hence $\overline{U}\subset \overline{A},  \overline{A}=X$.
+\end{proof}
+\begin{thm}[\tb{Baire category}]
+Every complete pseudometric space is a Baire space.
+\end{thm}
+\begin{proof}
+Let $U\subset X$ be open and $A=\cap_1^{\infty}O_n$ be residual. We must show $U\cap A\neq\emptyset$. Now as $\overline{O_n}=X,
+U\cap O_n\neq\emptyset$ and so we can choose a disk of diameter less than one, say $V_1$, s.t. $\overline{V_1}\subset U\cap O_1$.
+Proceed inductively to obtain $\overline{V_n}\subset U\cap O_n\cap V_{n-1}$, where $V_n$ has diameter $<1/n$. Let $x_n\in 
+\overline{V_n}$. Clearly $\{x_n\}$ is a Cauchy sequence, and by completeness has a convergence subsequence with limit point x.
+Then $x\in \cap_1^{\infty}\overline{V_n}, U\cap \cap_1^{\infty}O_n\neq\emptyset$.
+\end{proof}
 \section*{Exercises}
+\begin{exer}
+Let S and T be sets and $f:S\rightarrow T$. Show that f is a bijection iff there is a mapping $g:T\rightarrow S$ s.t. $f\circ g,
+g\circ f$ are identity mappings.
+\end{exer}
+\begin{exer}
+Let X and Y be topological space with Y Hausdorff. Then show that, for any continuous maps $\map{f,g}{X}{Y},\lbrace x\in X\mid
+f(x)=g(x)$ is closed. [Hint: Consider the mapping $x\longmapsto (f(x),g(x))$].
+\end{exer}
+\begin{exer}
+Prove that in a Hausdorff space, single points are closed.
+\end{exer}
+\begin{exer}
+Define a topological manifold as a space locally homeomorphic to $\R{n}$. Find a topological manifold that is not Hausdorff and 
+not locally compact. [Hint: Consier $\mathbb{R}\cup\{\pm\infty\}$].
+\end{exer}
+\begin{exer}
+Show that the continuous image of a connected space is connected.
+\end{exer}
 \section{Finite-Dimensional Banach Sapce}
 \section*{Exercises}
 \section{Local Differential Calculus}
