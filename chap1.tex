@@ -490,7 +490,24 @@ A map $\map{f}{M}{N}$ is called a diffeomorphism if f is of class $C^r$, is a bi
 Prove that $S^1$ is a submanifold of $\R{2}$.
 \end{exer}
 \section{Vector Bundles}
-\section*{Exercises}
+\begin{definition}
+Let E and F be vector spaces with U an open subset of E. We call the product $U\times F$ a \tb{local vector bundle}. We call U
+the \tb{base space}, which can be identified with $U\times\{0\}$, the zero section. For $u\in U$, $\{u\}\times F$ is called the
+\tb{fiber} over u, which we can endow with the vector space structure of F. The map $\map{\pi}{U\times F}{U}$ given by $\pi(
+u,f)=u$ is called the \tb{projection} of $U\times F$. Thus, the fiber over u is $\pi^{-1}(u)$.
+\end{definition}
+\begin{definition}
+Let S be a set. A \tb{local bundle chart} of S is a pair $(U,\varphi)$ where $U\subset S$ and $\varphi:U\rightarrow U'\times F'$
+is a bijection. A \tb{vector bundle atlas} on S is a family $\mca{B}=\lbrace(U_i,\varphi_i)\rbrace$ statisfying:
+\begin{enumerate}
+\item[(1)] it covers S;
+\item[(2)] for any two local bundle charts $(U_i,\varphi_i),(U_j,\varphi_j)$ with $U_i\cap U_j\neq\emptyset$ and the overlap map
+$\phi_{ji}=\varphi_j\circ\varphi_i^{-1}\mid\varphi_i(U_i\cap U_j)$ is a local vector bundle isomorphism.
+\end{enumerate}
+\end{definition}
+A \tb{vector bundle} E is a pair $(S,\mca{V})$, where $\mca{V}$ is a vector bundle structure on set S. We define the \tb{zero 
+section} by $E_0=\lbrace e\in E\mid \text{there exists} (U,\varphi), e=\varphi^{-1}(u',0)$.
+%\section*{Exercises}
 \section{The Tangent Bundle}
 \section*{Exercises}
 \section{Tensors}
