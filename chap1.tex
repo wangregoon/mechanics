@@ -395,8 +395,66 @@ If there is such an L we say f is \tb{differentiable} at $u_0$, and define the \
 $Df(u_0)=L$. If f is differentiable at each $u\in U$, the map $\map{\mathrm{D}f}{U}{L(E,F)};u\mapsto \mathrm{D}f(u)$ 
 is the \tb{derivative} of f. Moreover, if $\mathrm{D}f$ is a continuous map we say f is of class $C^1$.
 \end{definition}
-
+\begin{definition}
+Suppose $\map{f}{U\subset E}{F}$ is of class $C^1$. Define the \tb{tangent} of f to be the map: $Tf:U\times E\rightarrow
+F\times F$ given by $Tf(u,e)=(f(u),Df(u)\cdot e$.
+\end{definition}
+From a geometrical point of view, T is more natural than D. If we take $(u,e)$ as a vector with base point u, then $(f(u),
+Df(u)\cdot e)$ is the image vector with its base point. Another reason for this is its behavior under composition, so T is
+a covariant functor.
+\begin{thm}
+\begin{align*}
+T(g\circ f)&=T(g)\circ T(f) \\
+T^r(g\circ f)&=T^r(g)\circ T^r(f)
+\end{align*}
+\end{thm}
+For $\map{f}{E}{F},\map{c}{I}{U}$. So $Df(u)\cdot e=\frac{\text{d}}{\text{d}t}\lbrace f(u+te)\rbrace\mid_{t=0}$. $Df(u)$ is
+represented by the usual Jacobian matrix. If we apply the fundamental theorm of calculus to $t\mapsto f(tx+(1-t)y)$ and 
+$\norm{Df(tx+(1-t)y)}\leq M$, we obtain the mean value inequality:$\norm{f(x)-f(y)}\leq M\norm{x-y}$.
+\begin{definition}
+Let $U_1\subset E_1, U_2\subset E_2$ be open and suppose $\map{f}{U_1\times U_2}{F}$. Then the \tb{partial derivative} of f
+with respect to $E_1$ denoted $D_1f$ is defined by $D_1f(u_1,u_2):E_1\rightarrow F: e_1\mapsto D_1f(u_1,u_2)\cdot e_1 = 
+Df(u_1,u_2)\cdot (e_1,0)$. Thus $Df=D_1f+D_2f$.
+\end{definition}
+\begin{thm}[\tb{Inverse Mapping}]
+Let $\map{f}{U\subset E}{F}$ be of class $C^r$ and suppose $Df(x_0)$ is a linear isomorphism. Then f is a $C^r$ diffeomorphism 
+of some neighborhood of $x_0$ onto some neighborhood of $f(x_0)$. 
+\end{thm}
+\begin{lem}
+Let M be a complete metric space, Let $\map{F}{M}{M}$ and assume there is a constant $0\leq\lambda<1$ s.t. $\forall x,y\in M,
+d(F(x),F(y))\leq \lambda d(x,y)$. Then F has a unique fixed point $x_0\in M, F(x_0)=x_0$.
+\end{lem}
+\begin{proof}
+Pick $x_1\in M$ and define $x_{n+1}=F(x_n)$. Thus $d(x_{n+1},x_n)\leq \lambda^{n-1}d(F(x_1),x_1)$ and $d(x_{n+k},x_n)\leq 
+\left(\sum_{j=n-1}^{n+k-1}\lambda^{j}\right)d(F(x_1),x_1)$. Thus $x_n$ is a Cauchy sequence. Since F is obviously uniformly
+continuous, then $x_0=\lim_{n\rightarrow \infty}x_n=\lim_{n\rightarrow \infty}x_{n+1}=\lim_{n\rightarrow \infty}F(x_n)=F(x_0)$.
+\end{proof}
+\begin{thm}[\tb{Implicit Function}]
+Let $U\subset E, V\subset F$ and $\map{f}{U\times V}{G}$ be $C^r$. For some $x_0,y_0$ assume $D_2f(x_0,y_0):F\rightarrow G$ 
+is an isomorphism. Then there are neighborhoods $x_0\in U_0, f(x_0,y_0)\in W_0$ and a unique $C^r$ map $\map{g}{U_0\times W_0}{V}$
+s.t. $\forall (x,w)\in U_0\times W_0, f(x,g(x,w))=w$.
+\end{thm}
+\begin{proof}
+Consider the map $\Phi:(x,y)\mapsto (x,f(x,y))$, then $$D\Phi(x_0,y_0)\cdot(x_1,y_1)=
+\left(\begin{matrix}
+I & 0 \\
+D_1f(x_0,y_0) & D_2f(x_0,y_0)
+\end{matrix}\right)
+\left(\begin{matrix}
+x_1 \\
+y_1
+\end{matrix}\right)$$
+which is easily seen to be an isomorphism. Thus $\Phi$ has a unique $C^r$ local inverse $\Phi^{-1}:(x,w)\mapsto (x,g(x,w))$.
+Then g so defined is the desired map.
+\end{proof}
 \section*{Exercises}
+\begin{exer}
+Show that $$T^2f:(U\times E)\times(E\times E)\rightarrow (F\times F)\times F\times F $$ $$ (u,e_1,e_2,e_3)\mapsto 
+(f(u),Df(u)\cdot e_1, Df(u)\cdot e_2, D^2f(u)\cdot(e_1,e_2)+Df(u)\cdot e_3$$
+\end{exer}
+\begin{exer}
+Develop a formula for $D^r(f\circ g), D^r(fg)$.
+\end{exer}
 \section{Manifolds and Mappings}
 \section*{Exercises}
 \section{Vector Bundles}
