@@ -509,6 +509,60 @@ A \tb{vector bundle} E is a pair $(S,\mca{V})$, where $\mca{V}$ is a vector bund
 section} by $E_0=\lbrace e\in E\mid \text{there exists} (U,\varphi), e=\varphi^{-1}(u',0)$.
 %\section*{Exercises}
 \section{The Tangent Bundle}
+Let $\map{\tau_U}{TU}{U}$ be the projections. We identify U with zero section $U\times \{0\}$. Then the diagram
+\begin{displaymath}
+    \xymatrix{
+        TU \ar[r]^{Tf} \ar[d]_{\tau_U} & TV \ar[d]^{\tau_V} \\
+        U  \ar[r]_f                    & V }
+\end{displaymath}
+is commutative, that is, $f\circ \tau_U=\tau_V\circ Tf$. We will now extend the tangent functior T from this local context to the 
+category of differentiable manifolds and mappings.
+\begin{definition}
+Let M be a manifold and $m \in M$. A curve at m is a $C^1$ map $\map{c}{I}{M}$ with $0\in I, c(0)=m$. Let $c_1,c_2$ be cureves at 
+m and $(U,\varphi)$ an admissible chart with $m\in U$. Then we say $c_1,c_2$ are \tb{tangent} at m with respect $\varphi$ iff 
+$\varphi\circ c_1, \varphi\circ c_2$ are tangent at 0.
+\end{definition}
+\begin{prop}
+Suppose $(U_\beta,\varphi_\beta)$ are admissble charts. Then $c_1, c_2$ are tangent at m with respect to $\varphi_1$ iff they are
+tangent at m with respect to $\varphi_2$.
+\end{prop}
+\begin{proof}
+Let $D(\varphi_1\circ c_1)(0)=D(\varphi_1\circ c_2)(0)$ and $u_1=U_2$. Then we have $\varphi_2\circ c_i=(\varphi_2\circ\varphi_1^{-1})
+\circ (\varphi_1\circ c_i)$. Then it follows that $D(\varphi_2\circ c_1)(0)=D(\varphi_2\circ c_2)(0)$.
+\end{proof}
+From the Proposition, we can say that $c_1, c_2$ are tangent at m for any local chart $\varphi$. An \tb{equivalence class} of such curves 
+is denoted $[c]_m$.
+\begin{definition}
+The \tb{tangent space} of M at m is the set of equivalence calsses of curves at m $T_m(M)=\lbrace[c]_m\mid c \text{is a curve at m}\rbrace$.
+For a subset $A\subset M$, let $TM\mid A=\underset{\cup}{m\in A}T_m(M)$. We call $TM=TM\mid M$ the tangent bundle of M. The mapping 
+$\map{\tau_M}{TM}{M}$ defined by $\tau_M([c]_m)=m$, is the \tb{tangent bundle projection}.
+\end{definition}
+\begin{prop}
+There is a unique $e\in E$ s.t. the curve $c_{u,e}$ defined by $c_{u,e}(t)=u+te$ is tangent to c at u.
+\end{prop}
+\begin{proof}
+$Dc(0)$ is the unique linear map in $L(\mathbb{R},E)$ s.t. the curve $\map{g}{\mathbb{R}}{E}$ given by $g(t)=u+Dc(0)*t$ is tangent to c
+at t=0. If $e=Dc(0)\cdot 1$, then $g= c_{u,e}$.
+\end{proof}
+\begin{prop}
+Suppose $c_1,c_2$ are tangent at m. Let $\map{f}{M}{N}$ be of class $C^1$. Then $f\circ c_1, f\circ c_2$ are tangent at $f(m)\in N$.
+\end{prop}
+\begin{proof}
+$(\phi\circ f\circ c_1)'(0)=(\phi\circ f'\circ\varphi^{-1})(\varphi\circ c_1)'(0)=(\phi\circ f'\circ\varphi^{-1})(\varphi\circ c_2)'(0)
+=(\phi\circ f\circ c_2)'(0)$
+\end{proof}
+\begin{definition}
+We define $\map{Tf}{TM}{TN}$ by $Tf([c]_m)=[f\circ c]_{f(m)}$. We call Tf the \tb{tangent} of f.
+\end{definition}
+\begin{thm}
+\begin{enumerate}
+\item[(1)] Suppose $M\overset{\rightarrow}{f}N\overset{\rightarrow}{g}K$. Then $\map{f\circ f}{M}{K}$ is of class $C^1$ and $T(g\circ f)
+=Tg\circ Tf$.
+\item[(2)] If $\map{h}{M}{M}$ is the identity map, then $Th$ is the identity map.
+\item[(3)] If f is a diffeomorphism, then Tf is a bijection and $(Tf)^{-1}= T(f^-1)$.
+\end{enumerate}
+
+\end{thm}
 \section*{Exercises}
 \section{Tensors}
 \section*{Exercises}
