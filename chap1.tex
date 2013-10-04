@@ -561,7 +561,32 @@ We define $\map{Tf}{TM}{TN}$ by $Tf([c]_m)=[f\circ c]_{f(m)}$. We call Tf the \t
 \item[(2)] If $\map{h}{M}{M}$ is the identity map, then $Th$ is the identity map.
 \item[(3)] If f is a diffeomorphism, then Tf is a bijection and $(Tf)^{-1}= T(f^-1)$.
 \end{enumerate}
-
+\end{thm}
+\begin{proof}
+Let $(U,\varphi),(V,\phi),(W,\rho)$ be charts of M,N,K. Then for the local representatives 
+\begin{align*}
+(g\circ f)_{\varphi\rho} &=\rho\circ g\circ f\circ\varphi^{-1} \\
+                         &=\rho\circ g\circ\phi^{-1}\circ\phi\circ f\circ\varphi^{-1} \\
+                         &=g_{\phi\rho}\circ f_{\varphi\phi}
+\end{align*}
+(1) Thus, by the $C^1$ composite mapping theorem,
+\begin{align*}
+T(g\circ f)[c]_m &= [g\circ f\circ c]_{g\circ f(m)} \\
+Tg\circ Tf[c]_m  &= Tg([f\circ c]_{f(m)}) = [g\circ f\circ c]_{g\circ f(m)}
+\end{align*}
+(2) it is obvious. (3) $f,f^{-1}$ are diffeomorphisms with $f\circ f^{-1}$ the identity on N, while $f^{-1}\circ f$ is the identity on M.
+By (1,2), $Tf\circ Tf^{-1}$ is the identity on TN, while $Tf^{-1}\circ Tf$ is the identity on TM.
+\end{proof}
+\begin{thm}
+Let M be a manifold and $\mca{A}$ an atlas of admissible charts. Then $T\mca{A}=\lbrace(TU,T\varphi)\mid(U,\varphi)\in \mca{A}\rbrace$ is 
+a vector bundle atlas of TM called a \tb{natural atlas}. 
+\end{thm}
+\begin{proof}
+Since union of U covers M, the union of TU covers TM. Suppose we have $TU_i\cap TU_j\neq\emptyset$. Then $U_i\cap U_j\neq\emptyset$ and
+we can verify $T\varphi_i\circ(T\varphi_j)^{-1}=T(\varphi_i\circ \varphi_j^{-1})$ is a local vector bundle isomorphism.
+\end{proof}
+\begin{thm}
+Suppose f and g are $C^{r}$ mappings. Then $g\circ f$ is of $C^r$ and $T^r(g\circ f)=T^rg\circ T^rf$.
 \end{thm}
 \section*{Exercises}
 \section{Tensors}
